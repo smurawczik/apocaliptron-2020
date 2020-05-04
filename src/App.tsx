@@ -11,6 +11,7 @@ import { GameTree, GameApi, Option, unexpectedGameEnd } from './Engine/Tree';
 import HealthApi from './Engine/Health';
 
 import classes from './App.module.scss';
+import NewItem from './components/NewItem/NewItem';
 
 const App = () => {
   const [node, setSelectedNode] = useState(GameApi.getInitialNode(GameTree));
@@ -59,6 +60,7 @@ const App = () => {
       </div>
       <Items items={items} onItemUse={useItem} />
       <Choose Node={node} onOptionSelect={onOptionSelect} />
+      <NewItem item={items[0]} />
     </div>
   );
 }
