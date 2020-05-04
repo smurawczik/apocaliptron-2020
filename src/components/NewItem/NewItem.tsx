@@ -15,6 +15,7 @@ const NewItem: React.FC<{ item: ApiItem }> = ({ item }) => {
           <span>Nuevo item:</span>
           <b>{item.NAME}</b>
         </div>
+        <div>{item.DESCRIPTION}</div>
       </div>
     </div>
   );
