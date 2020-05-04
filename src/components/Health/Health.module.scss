@@ -1,0 +1,71 @@
+:local {
+  .container {
+    display: flex;
+    position: relative;
+    margin: 16px 8px;
+    height: 20px;
+    align-items: center;
+
+    .healthData {
+      text-align: center;
+      width: 100%;
+      position: absolute;
+      color: #00ffc9;
+      z-index: 5;
+      mix-blend-mode: difference;
+    }
+
+    .healthBar {
+      float: left;
+      position: relative;
+      padding: 8px 0;
+      width: 100%;
+      transition: all 0.75s;
+      height: 100%;
+      color: black;
+      z-index: 2;
+      text-align: center;
+
+      &:before {
+        content: "";
+        z-index: -1;
+        background-color: rgb(66, 235, 198);
+        box-shadow: 3px 3px 0 #30cfad;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transform: skewX(-25deg);
+      }
+    }
+
+    .damageBar {
+      float: left;
+      position: relative;
+      padding: 8px 0;
+      height: 100%;
+      width: 0;
+      z-index: 2;
+      text-align: center;
+      transition: all 0.75s;
+
+      > * {
+        visibility: hidden;
+      }
+
+      &:before {
+        content: "";
+        z-index: -1;
+        background-color: rgb(235, 210, 66);
+        box-shadow: 3px 3px 0 #cfbf30;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transform: skewX(-25deg);
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+:local {
+  .textbox {
+    position: relative;
+    box-shadow: 0 0 0 3px #42ebc6, 0 0 0 6px #000, 0 0 0 9px desaturate(#f0f, 70);
+    border-radius: 5px;
+    padding: 32px;
+    letter-spacing: 2px;
+    box-sizing: border-box;
+  }
+}

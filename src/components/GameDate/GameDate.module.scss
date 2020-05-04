@@ -1,0 +1,21 @@
+:local {
+  .container {
+    position: relative;
+    padding: 8px;
+    color: black;
+    text-align: center;
+
+    &:before {
+      content: "";
+      z-index: -1;
+      background-color: rgb(66, 235, 198);
+      box-shadow: 3px 3px 0 #3ccaab;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transform: skewX(-25deg);
+    }
+  }
+}

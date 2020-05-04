@@ -1,0 +1,70 @@
+:local {
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+
+    .itemsBackdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.85);
+      z-index: 10;
+      overflow-y: auto;
+
+      &.noItemsBackdrop {
+        display: flex;
+        justify-content: center;
+      }
+
+      .items {
+        max-width: calc(100vw - 50px);
+
+        .item {
+          width: 125px;
+          height: 125px;
+          box-shadow: 0 0 0 3px rgb(66, 235, 198), 0 0 0 6px black, 0 0 0 9px desaturate(#f0f, 50);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          float: left;
+          transform: skewX(-7deg);
+          margin: 16px;
+          transition: all 0.2s;
+          cursor: pointer;
+
+          .itemName {
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 8px;
+          }
+
+          &:hover {
+            box-shadow: 0 0 0 4px rgb(66, 235, 198), 0 0 0 7px black, 0 0 0 11px desaturate(#ff0, 50);
+          }
+        }
+
+        .noItems {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .closeInventory {
+          position: fixed;
+          top: 0;
+          right: 15px;
+          font-size: 2em;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
