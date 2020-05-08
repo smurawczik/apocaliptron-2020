@@ -1,4 +1,5 @@
 import { GameNode, GameIdsObject } from "../Tree";
+import { GAME_ITEMS } from "../Items";
 
 const ChapterOneIDS: GameIdsObject = {
   START: 1,
@@ -36,6 +37,7 @@ const ChapterOne: GameNode[] = [
         health: -30,
         options: [],
         children: [],
+        item: GAME_ITEMS.DINNER,
       },
     ],
   },

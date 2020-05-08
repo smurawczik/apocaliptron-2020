@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 
 import Health from './components/Health/Health';
@@ -18,7 +18,7 @@ const App = () => {
   const [date, setDate] = useState(moment().format("DD-MM-YYYY HH:mm:ss A"));
   const [health, setHealth] = useState(HealthApi.getHealth());
   const [items, setItems] = useState(ItemsApi.getUserItems());
-  const [itemAdded, setItemAdded] = useState<ApiItem | undefined>(items[0]);
+  const [itemAdded, setItemAdded] = useState<ApiItem | undefined>(undefined);
 
   const onOptionSelect = (option: Option) => {
     const newNode = GameApi.searchTree(GameApi.getInitialNode(GameTree), option.id);
@@ -26,6 +26,11 @@ const App = () => {
       setSelectedNode(unexpectedGameEnd)
     } else {
       setSelectedNode(newNode);
+    }
+
+    if (newNode?.item) {
+      setItems(ItemsApi.addItem(newNode.item));
+      setItemAdded(items[items.length - 1])
     }
 
     if (newNode?.health) {
@@ -52,6 +57,15 @@ const App = () => {
   const itemWasAdded = () => {
     setItemAdded(undefined);
   };
+
+  useEffect(() => {
+    const dateInterval = setInterval(() => {
+      setDate(moment().format("DD-MM-YYYY HH:mm:ss A"));
+    }, 1000);
+    return () => {
+      clearInterval(dateInterval);
+    }
+  }, [])
 
   return (
     <div className={classes.container}>

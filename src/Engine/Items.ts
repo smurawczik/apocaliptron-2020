@@ -61,8 +61,8 @@ const ItemsApi = () => {
   ];
 
   const getUserItems = () => items;
-  const addItem = (item: ApiItem) => {
-    items.push(item);
+  const addItem = (item: Item) => {
+    items.push({ ...item, uniqueID: generateUniqueID() });
     return items;
   };
   const removeItem = (item: ApiItem) => {

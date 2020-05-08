@@ -14,24 +14,22 @@ const NewItem: React.FC<{ item: ApiItem, onAnimationEnd: () => void }> = ({ item
   }
 
   useEffect(() => {
-    let timer: NodeJS.Timeout;
     const containerElement = container.current;
 
-    // if (containerElement !== null) {
-    //   containerElement.addEventListener("animationend", onAnimationEndHandler);
+    if (containerElement !== null) {
+      containerElement.addEventListener("animationend", onAnimationEndHandler);
 
-    //   timer = setTimeout(() => {
-    //     if (container && container.current !== null) {
-    //       containerElement.classList.add(classes.leave);
-    //     }
-    //   }, 7500);
-    // }
+      setTimeout(() => {
+        if (containerElement !== null) {
+          containerElement.classList.add(classes.leave);
+        }
+      }, 7500);
+    }
 
     return () => {
       if (containerElement !== null) {
         containerElement.removeEventListener("animationend", onAnimationEndHandler);
       }
-      clearTimeout(timer);
     }
   })
 

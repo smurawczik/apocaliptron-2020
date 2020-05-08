@@ -1,3 +1,4 @@
+import { Item } from "./Items";
 import ChapterOne from "./Chapters/Chapter1";
 
 export type Option = {
@@ -16,6 +17,7 @@ export type GameNode = {
   id: number;
   children: GameNode[];
   health?: number;
+  item?: Item;
 };
 
 export const unexpectedGameEnd: GameNode = {
