@@ -5,7 +5,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    // background-color: rgba(0, 0, 0, 0.5);
+    // box-shadow: inset 0 -20px 15px -15px lighten(desaturate(#f0f, 50), 10),
+    //   inset 0 -40px 30px -30px lighten(desaturate(#ff0, 50), 10), inset 0 -60px 45px -45px rgb(101, 235, 206);
     z-index: 100;
     cursor: pointer;
 
@@ -15,34 +16,34 @@
 
     .newItemPinkLane {
       animation: slideInLeft 1.75s ease-in-out 0s 1 normal both;
-      height: 20vh;
+      height: 25vh;
       width: 85%;
       left: 10%;
-      top: 25%;
+      top: 20%;
       position: relative;
       opacity: 0.85;
       transform: skewX(-20deg);
-      background-color: lighten(desaturate(#f0f, 50), 10);
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, lighten(desaturate(#f0f, 25), 10) 100%);
     }
 
     .newItemYellowLane {
       animation: slideInRight 1.85s ease-in-out 0s 1 normal both;
-      height: 15vh;
+      height: 25vh;
       width: 75%;
-      top: 35%;
+      top: 40%;
       left: 20%;
       position: relative;
       opacity: 0.85;
       transform: skewX(-20deg);
-      background-color: lighten(desaturate(#ff0, 50), 10);
+      background: linear-gradient(to bottom, lighten(desaturate(#ff0, 25), 10) 0%, rgba(255, 255, 255, 0) 100%);
     }
 
     .newItemGreenLane {
-      box-shadow: 0 4px 0 5px lighten(desaturate(#ff0, 50), 10), 0 -4px 0 10px lighten(desaturate(#f0f, 50), 10);
+      // box-shadow: inset 0 20px 15px -10px rgb(58, 32, 92), inset 0 -20px 15px -10px rgb(100, 76, 40);
       animation: slideInLeft 1.5s ease-in-out 0s 1 normal forwards;
-      height: 20vh;
+      height: 30vh;
       width: 80%;
-      top: 5%;
+      top: -10%;
       left: 13%;
       opacity: 0.85;
       position: relative;
@@ -58,7 +59,7 @@
 
   @keyframes slideInRight {
     from {
-      transform: translate3d(100%, 0, 0) skewX(-15deg);
+      transform: translate3d(130%, 0, 0) skewX(-15deg);
       visibility: visible;
     }
 
@@ -69,7 +70,7 @@
 
   @keyframes slideInLeft {
     from {
-      transform: translate3d(-100%, 0, 0) skewX(-15deg);
+      transform: translate3d(-130%, 0, 0) skewX(-15deg);
       visibility: visible;
     }
 

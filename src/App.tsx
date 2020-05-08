@@ -18,6 +18,7 @@ const App = () => {
   const [date, setDate] = useState(moment().format("DD-MM-YYYY HH:mm:ss A"));
   const [health, setHealth] = useState(HealthApi.getHealth());
   const [items, setItems] = useState(ItemsApi.getUserItems());
+  const [itemAdded, setItemAdded] = useState<ApiItem | undefined>(items[0]);
 
   const onOptionSelect = (option: Option) => {
     const newNode = GameApi.searchTree(GameApi.getInitialNode(GameTree), option.id);
@@ -48,6 +49,10 @@ const App = () => {
     }
   }
 
+  const itemWasAdded = () => {
+    setItemAdded(undefined);
+  };
+
   return (
     <div className={classes.container}>
       <div className={classes.healthDateContainer}>
@@ -60,7 +65,9 @@ const App = () => {
       </div>
       <Items items={items} onItemUse={useItem} />
       <Choose Node={node} onOptionSelect={onOptionSelect} />
-      <NewItem item={items[0]} />
+      {
+        itemAdded && <NewItem item={itemAdded} onAnimationEnd={itemWasAdded} />
+      }
     </div>
   );
 }

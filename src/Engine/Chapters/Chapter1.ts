@@ -12,19 +12,19 @@ const ChapterOne: GameNode[] = [
     id: ChapterOneIDS.START,
     options: [
       {
-        id: ChapterOneIDS.PRETEND_NOBODY_IS_HOME,
+        id: 1,
         text: "y las opciones",
       },
       {
-        id: ChapterOneIDS.PRETEND_NOBODY_IS_HOME,
+        id: 2,
         text: "posibles",
       },
       {
-        id: ChapterOneIDS.PRETEND_NOBODY_IS_HOME,
+        id: 3,
         text: "para elegir",
       },
       {
-        id: ChapterOneIDS.PRETEND_NOBODY_IS_HOME,
+        id: 4,
         text: "Algunas pueden hacerte daño",
       },
     ],
